@@ -1,0 +1,101 @@
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+/* font-family: 'Handlee', cursive; */
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+	/* font-family: "Titillium Web", sans-serif; */
+	font-family: 'Handlee', cursive;
+}
+
+:root {
+	--mainColor: rgb(208,198,188);
+	/* --mainColorLight: #71aa57; */
+	--secondaryColor: black;
+	--textColor: #ffffff;
+}
+
+.fixing{
+	position: sticky;
+	top: 0%;
+	z-index: 3;
+}
+
+.header_n {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	position: relative;
+	height: 60px;
+	padding: 0 2rem;
+	background-color: var(--mainColor);
+	color: var(--textColor);
+}
+
+nav a {
+	margin: 0 1rem;
+	color: var(--textColor);
+	text-decoration: none;
+}
+
+nav a:hover {
+	color: var(--secondaryColor);
+}
+
+.header_n .nav-btn {
+	padding: 5px;
+	cursor: pointer;
+	background: transparent;
+	border: none;
+	outline: none;
+	color: var(--textColor);
+	visibility: hidden;
+	opacity: 0;
+	font-size: 1.8rem;
+}
+
+.header_n div,
+nav {
+	display: flex;
+	align-items: center;
+}
+
+@media only screen and (max-width: 1024px) {
+	.header_n .nav-btn {
+		visibility: visible;
+		opacity: 1;
+        /* z-index: 2; */
+	}
+
+	.header_n nav {
+		position: fixed;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		gap: 1.5rem;
+		background-color: var(--mainColor);
+		transition: 1s;
+		transform: translateY(-100vh);
+		z-index: 3;
+		/* position: fixed; */
+	}
+
+	.header_n .responsive_nav {
+		transform: none;
+	}
+
+	nav .nav-close-btn {
+		position: absolute;
+		top: 2rem;
+		right: 2rem;
+	}
+
+	nav a {
+		font-size: 1.5rem;
+	}
+}
